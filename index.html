@@ -126,7 +126,7 @@
 
 <div id="main-content">
     <p class="intro-text">
-        benvenuti su ai per ricerche. Questo sito è stato creato da Jonathan Bascelli per permettervi di usare una intelligenza artificiale per creare ricerche su ciò che volete scoprire. La nostra intelligenza artificiale è stata addestrata per creare ricerche seguendo lo stile di un ragazzo gli ingredienti che avete in casa. Vi basterà scrivere ciò che avete a disposizione e, premendo "crea ricetta", otterrete una fantastica ricetta originale. Premendo "save PDF", potrete salvare sul vostro dispositivo la ricetta ottenuta.
+        Benvenuti su ai per ricerche. Questo sito è stato creato da Jonathan Bascelli per permettervi di usare una intelligenza artificiale per creare ricerche su ciò che volete scoprire. La nostra intelligenza artificiale è stata addestrata per creare ricerche seguendo lo stile di un ragazzo in modo impeccabile. Vi basterà scrivere ciò su cui volete informarvi e, premendo "crea ricerca", otterrete una fantastica ricerca originale e comprensibile (come ho accennato è calibrata per l'età di un ragazzo). Premendo "save PDF", potrete salvare sul vostro dispositivo la ricerca ottenuta.
     </p>
 
     <div class="donate-box">
@@ -148,7 +148,7 @@
 <div id="footer-container">
     <div id="controls">
         <input type="text" id="in" placeholder="Es: 2 uova, 100g farina...">
-        <button class="btn-send" onclick="askGroq()">Crea Ricetta</button>
+        <button class="btn-send" onclick="askGroq()">Crea Ricerca</button>
         <button class="btn-save" onclick="savePDF()">Save PDF</button>
     </div>
 
@@ -180,7 +180,7 @@
                 body: JSON.stringify({
                     model: "llama-3.3-70b-versatile",
                     messages: [
-                        {role: "system", content: "Sei uno chef stellato. Crea ricette con gli ingredienti dati. Firma: Strumento realizzato da Jonathan Bascelli"},
+                        {role: "system", content: "Crei delle ricerche su ciò che ti viene richiesto dall'utente. Devi seguire lo stile degli esempi contenuti nel file "stile.json" allegato. Non uscire mai fuori tema e usa parole semplici da capire, che userebbe un ragazzo delle medie / superiori. Firma: Strumento realizzato da Jonathan Bascelli"},
                         {role: "user", content: text}
                     ]
                 })
@@ -209,7 +209,7 @@
         const doc = new jsPDF();
         const splitText = doc.splitTextToSize(lastRecipe, 180);
         doc.text(splitText, 10, 10);
-        doc.save("Ricetta_Jonathan_Bascelli.pdf");
+        doc.save("ricerca.pdf");
     }
 
     // Inizializzazione AdMob (se presente cordova/capacitor)
