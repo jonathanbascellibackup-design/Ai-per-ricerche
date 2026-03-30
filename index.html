@@ -180,7 +180,10 @@
                 body: JSON.stringify({
                     model: "llama-3.3-70b-versatile",
                     messages: [
-                        {role: "system", content: "Crei delle ricerche su ciò che ti viene richiesto dall'utente. Devi seguire lo stile degli esempi contenuti nel file "stile.json" allegato. Non uscire mai fuori tema e usa parole semplici da capire, che userebbe un ragazzo delle medie / superiori. Firma: Strumento realizzato da Jonathan Bascelli"},
+                        { 
+                         role: "system", 
+                         content: "Crei delle ricerche su ciò che ti viene richiesto dall'utente. Devi seguire lo stile degli esempi contenuti nel file \"stile.json\" allegato. Non uscire mai fuori tema e usa parole semplici da capire, che userebbe un ragazzo delle medie / superiori. Firma: Strumento realizzato da Jonathan Bascelli"
+                        }
                         {role: "user", content: text}
                     ]
                 })
